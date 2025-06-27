@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Foundation of Toronto</title>
+
+    <link rel="stylesheet" href="./utils/mobile.css">
+    <link rel="stylesheet" href="./utils/desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- MOBILE SIDEBAR -->
+    <section class="sidebar hide" id="sidebar">
+        <div class="header">
+            <img draggable="false" onclick="goHome()" src="./imgs/ift-logo.svg" alt="Islamic Foundation of Toronto">
+            <a onclick="closeNav()">
+                <img draggable="false" class="more" src="./imgs/close.svg" alt="Close"/>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="accordion">Services<img class="icon" src="./imgs/plus.svg" alt=""></button>
+            <div class="panel">
+                <div class="panel-content">
+                    <div class="submenu">
+                        <a href="./services.html"><h6>Explore Services</h6></a>
+                        <h2><a onclick="closeNav()" href="./services.html#funerals">Funerals</a></h2>
+                        <h2><a onclick="closeNav()" href="./services.html#rentals">Rentals</a></h2>
+                        <h2><a onclick="closeNav()" href="./services.html#marriages">Marriages</a></h2>
+                    </div>
+                    <div class="submenu">
+                        <h6>Contact</h6>
+                        <h2><a href="#">416 876 3000</a></h2>
+                        <h2><a href="#">416 321 0909</a></h2>
+                    </div>
+                </div>
+            </div>
+            <button class="accordion">Community<img class="icon" src="./imgs/plus.svg" alt=""></button>
+            <div class="panel">
+                <div class="panel-content">
+                    <div class="submenu">
+                        <a href=""><h6>Explore Community</h6></a>
+                        <h2><a onclick="closeNav()" href="./community.html#dawa">Dawa</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#youth">Youth</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#seniors">Seniors</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#ramadan">Ramadan</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#qiraat-competition">Qiraat Competition</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#tax-clinic">Tax Clinic</a></h2>
+                        <h2><a onclick="closeNav()" href="./community.html#feeding-faithfully">Feeding Faithfully</a></h2>
+                    </div>
+                </div>
+            </div>
+            <button class="accordion">Schools<img class="icon" src="./imgs/plus.svg" alt=""></button>
+            <div class="panel">
+                <div class="panel-content">
+                    <div class="submenu">
+                        <a href="./schools.html"><h6>Explore Schools</h6></a>
+                        <h2><a onclick="closeNav()" href="./schools.html#full-time-hifz">Full-Time Hifz</a></h2>
+                        <h2><a onclick="closeNav()" href="./schools.html#evening-hifz">Evening Hifz</a></h2>
+                        <h2><a onclick="closeNav()" href="./schools.html#evening-madrassa">Evening Madrassa</a></h2>
+                        <h2><a onclick="closeNav()" href="./schools.html#sunday-school">Sunday School</a></h2>
+                    </div>
+                    <div class="submenu">
+                        <h6>Contact</h6>
+                        <h2><a href="#">416 321 0909</a></h2>
+                        <h2><a href="#">416 321 3776</a></h2>
+                    </div>
+                </div>
+            </div>
+            <button class="accordion">About<img class="icon" src="./imgs/plus.svg" alt=""></button>
+            <div class="panel">
+                <div class="panel-content">
+                    <div class="submenu">
+                        <a href="./about.html"><h6>About Us</h6></a>
+                        <h2><a onclick="closeNav()" href="./about.html#our-imam">Imams</a></h2>
+                        <h2><a onclick="closeNav()" href="./about.html#board">Board</a></h2>
+                        <h2><a onclick="closeNav()" href="./about.html#our-history">History</a></h2>
+                        <h2><a onclick="closeNav()" href="./archives.html">Archives</a></h2>
+                    </div>
+                    <div class="submenu">
+                        <h6>Connect with us</h6>
+                        <h2><a href="https://maps.app.goo.gl/WLA3rwbomkTrCFdAA">Google Maps</a></h2>
+                        <h2><a href="https://www.instagram.com/islamicfoundationoftoronto/">Instagram</a></h2>
+                        <h2><a href="https://www.facebook.com/iftlive/">FaceBook</a></h2>
+                        <h2><a href="https://www.youtube.com/user/islamicfoundationca">YouTube</a></h2>
+                        <h2><a href="https://x.com/iftlive">X / Twitter</a></h2>
+                    </div>
+                </div>
+            </div>
+            <a class="donate" href="https://app.irm.io/islamicfoundation.ca">Donate</a>
+        </nav>
+    </section>
+
+    <!-- NAVIGATION -->
+    <div>
+        <div class="header" id="headerdsktp">
+            <a href="./index.html"><img src="./imgs/ift-logo.svg" alt=""></a>
+            <div class="flex-row">
+                <a href="#our-services" id="element1">Services</a>
+                <a href="#our-community" id="element2">Community</a>
+                <a href="#our-schools" id="element3">Schools</a>
+                <a href="#about-us" id="element4">About</a>
+                <a href="https://app.irm.io/islamicfoundation.ca">Donate</a>
+            </div>
+            <div>
+                <a class="prayers button1 desktop" href="#prayers">Prayers</a>
+                <a class="more mobile" href="#menu" onclick="openNav()">
+                    <img draggable="false" src="./imgs/menu.svg" alt="Menu">
+                </a>
+            </div>
+        </div>
+        <!-- SERVICES -->
+        <div class="flex-row menu" id="element10">
+            <div class="submenu">
+                <a href="./services.html"><h6>Explore Services</h6></a>
+                <h2><a href="./services.html#funerals">Funerals</a></h2>
+                <h2><a href="./services.html#rentals">Rentals</a></h2>
+                <h2><a href="./services.html#marriages">Marriages</a></h2>
+            </div>
+            <div class="submenu">
+                <h6>Contact</h6>
+                <h2><a href="#">416 876 3000</a></h2>
+                <h2><a href="#">416 321 0909</a></h2>
+            </div>
+            <img class="ift-left" src="./imgs/ift-left.svg" alt="">
+            <img class="ift-right" src="./imgs/ift-right.svg" alt="">
+        </div>
+        <!-- COMMUNITY -->
+        <div class="flex-row menu" id="element20">
+            <div class="submenu">
+                <a href="./community.html"><h6>Explore Community</h6></a>
+                <h2><a href="./community.html#dawa">Dawa</a></h2>
+                <h2><a href="./community.html#youth">Youth</a></h2>
+                <h2><a href="./community.html#seniors">Seniors</a></h2>
+                <h2><a href="./community.html#ramadan">Ramadan</a></h2>
+                <h2><a href="./community.html#feeding-faithfully">Feeding Faithfully</a></h2>
+                <h2><a href="./community.html#tax-clinic">Tax Clinic</a></h2>
+            </div>
+            <div class="submenu">
+                <h6>Regular Events</h6>
+                <p>Brothers Reflections
+                <br>Fridays - 6pm - 9pm</p>
+                <p>Brothers Reflections
+                <br>Fridays - 6pm - 9pm</p>
+                <p>Brothers Reflections
+                <br>Fridays - 6pm - 9pm</p>
+            </div>
+            <img class="ift-left" src="./imgs/ift-left.svg" alt="">
+            <img class="ift-right" src="./imgs/ift-right.svg" alt="">
+        </div>
+        <!-- SCHOOLS -->
+        <div class="flex-row menu" id="element30">
+            <div class="submenu">
+                <a href="./schools.html"><h6>Explore Schools</h6></a>
+                <h2><a href="./schools.html#full-time-hifz">Full-Time Hifz</a></h2>
+                <h2><a href="./schools.html#evening-hifz">Evening Hifz</a></h2>
+                <h2><a href="./schools.html#evening-madrassa">Evening Madrassa</a></h2>
+                <h2><a href="./schools.html#sunday-school">Sunday School</a></h2>
+            </div>
+            <div class="submenu">
+                <h6>Contact</h6>
+                <h2><a href="#">416 321 0909</a></h2>
+                <h2><a href="#">416 321 3776</a></h2>
+            </div>
+            <img class="ift-left" src="./imgs/ift-left.svg" alt="">
+            <img class="ift-right" src="./imgs/ift-right.svg" alt="">
+        </div>
+        <!-- ABOUT -->
+        <div class="flex-row menu" id="element40">
+            <div class="submenu">
+                <a href="./about.html"><h6>About Us</h6></a>
+                <h2><a href="./about.html#our-imam">Imams</a></h2>
+                <h2><a href="./about.html#our-history">History</a></h2>
+                <h2><a href="./archives.html">Archives</a></h2>
+            </div>
+            <div class="submenu">
+                <h6>Connect with us</h6>
+                <h2><a href="#">Google Maps</a></h2>
+                <h2><a href="https://www.instagram.com/islamicfoundationoftoronto/">Instagram</a></h2>
+                <h2><a href="https://www.facebook.com/iftlive/">FaceBook</a></h2>
+                <h2><a href="https://www.youtube.com/user/islamicfoundationca">YouTube</a></h2>
+                <h2><a href="https://x.com/iftlive">X / Twitter</a></h2>
+            </div>
+            <img class="ift-left" src="./imgs/ift-left.svg" alt="">
+            <img class="ift-right" src="./imgs/ift-right.svg" alt="">
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <!-- SLIDER -->
+    <section class="container" id="scrollContainer">
+        <div class="slides" id="slide1">
+            <div class="slider-text" style="padding: 0; align-items: center; justify-content: flex-start;">
+                <h1>السلام عليكم ورحمه الله وبركاته
+                <br>Peace and blessings be upon you</h1>
+                <p>Welcome to the Islamic Foundation of Toronto.
+                <br>Proudly serving the ummah since 1969.</p>
+            </div>
+        </div>
+        <div class="slides" id="slide2">
+            <div class="slider-text">
+                <h1>Join us during Ramadan</h1>
+                <p>Daily iftar meals after Maghrib. Nightly tafsir sessions after taraweeh with Mufti Yusuf Badat. Friday Night Reflections series after taraweeh. Itikaaf and Qiyaam-ul layl in the last 10 nights</p>
+                <a href="">Register</a>
+            </div>
+            <img src="./imgs/45.jpg" alt="">
+        </div>
+        <div class="slides" id="slide3">
+            <div class="slider-text">
+                <h1>Donate to our relief efforts.</h1>
+                <p>
+                    Since the onset of the humanitarian crisis in Gaza, the Islamic Foundation has been instrumental in sending aid to hundreds of thousands of people.
+                </p>
+                <a href="https://app.irm.io/islamicfoundation.ca">Donate Now</a>
+            </div>
+            <img src="./imgs/45.jpg" alt="">
+        </div>
+        <img class="containerimg" src="./imgs/slide1.png" alt="">
+    </section>
+
+    <!-- SLIDER CONTROLS -->
+    <div class="controls">
+        <div style="display: flex; column-gap: 24px;">
+            <a href="#slide1" id="link-slide1" class="dynamic-scroll">Welcome to IFT</a>
+            <img src="./imgs/pagination.svg" alt="">
+            <a href="#slide2" id="link-slide2" class="dynamic-scroll">Join us during Ramadan</a>
+            <img src="./imgs/pagination.svg" alt="">
+            <a href="#slide3" id="link-slide3" class="dynamic-scroll">Donate to relief efforts</a>
+        </div>
+        <div style="display: flex; column-gap: 16px;">
+            <button class="left" onclick="scrollToPrev()">
+                <img src="./imgs/left.svg" alt="Left Arrow">
+            </button>
+            <button class="right" onclick="scrollToNext()">
+                <img src="./imgs/right.svg" alt="Right Arrow">
+            </button>
+        </div>
+    </div>
+    
+    <!-- PAGINATION -->
+    <!-- <div class="pagination">
+        <button class="left" onclick="scrollToPrev()">
+            <img src="./imgs/left.svg" alt="Left Arrow">
+        </button>
+        <a href="#1">
+            <img src="./imgs/pagination.svg" alt="">
+            <h6>Something</h6>
+        </a>
+        <a href="#2">
+            <img src="./imgs/pagination.svg" alt="">
+            <h6>Anything</h6>
+        </a>
+        <a href="#3">
+            <img src="./imgs/pagination.svg" alt="">
+            <h6>Nothing</h6>
+        </a>
+        <a href="#4">
+            <img src="./imgs/pagination.svg" alt="">
+            <h6>Everything</h6>
+        </a>
+        <button class="right" onclick="scrollToNext()">
+            <img src="./imgs/right.svg" alt="Right Arrow">
+        </button>
+    </div> -->
+
+    <!-- AZAAN DASHBOARD -->
+    <section class="azaan-dashboard" id="prayers">
+        <div class="clock">
+            <p class="time">-- : --</p>
+            <p class="date">Loading...</p>
+        </div>
+
+        <!-- DESKTOP VERSION -->
+        <div class="azaan-panel-desktop desktop">
+            <div class="azaan" >
+                <div class="minus4">
+                    <h6>الفجر</h6>
+                    <h6>Fajr</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="fajr-adhan">--:--</p>
+                    <p class="p2" id="fajr-iqama">--:--</p>
+                </div>
+            </div>
+            <img src="./imgs/spacer.svg" alt="">
+            <div class="azaan">
+                <div class="minus4">
+                    <h6>الشروق</h6>
+                    <h6>Sunrise</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="sunrise">--:--</p>
+                    <p style="visibility: hidden;">--:--</p>
+                </div>
+            </div>
+            <img src="./imgs/spacer.svg" alt="">
+            <div class="azaan">
+                <div class="minus4">
+                    <h6>الظهر</h6>
+                    <h6>Dhuhr</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="dhuhr-adhan">--:--</p>
+                    <p class="p2" id="dhuhr-iqama">--:--</p>
+                </div>
+            </div>
+            <img src="./imgs/spacer.svg" alt="">
+            <div class="azaan">
+                <div class="minus4">
+                    <h6>العصر</h6>
+                    <h6>Asr</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="asr-adhan">--:--</p>
+                    <p class="p2" id="asr-iqama">--:--</p>
+                </div>
+            </div>
+            <img src="./imgs/spacer.svg" alt="">
+            <div class="azaan">
+                <div class="minus4">
+                    <h6>المغرب</h6>
+                    <h6>Maghrib</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="maghrib-adhan">--:--</p>
+                    <p class="p2" id="maghrib-iqama">--:--</p>
+                </div>
+            </div>
+            <img src="./imgs/spacer.svg" alt="">
+            <div class="azaan">
+                <div class="minus4">
+                    <h6>العشاء</h6>
+                    <h6>Isha</h6>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="isha-adhan">--:--</p>
+                    <p class="p2" id="isha-iqama">--:--</p>
+                </div>
+            </div>
+        </div>
+        <div class="jumma-desktop desktop">
+            <div class="minus4">
+                <h6>صلاة الجمعة</h6>
+                <h6>Jumma Prayers</h6>
+            </div>
+            <div class="flex24">
+                <div class="flex">
+                    <p class="p1" id="jumma1-adhan">--:--</p>
+                    <p class="p2" id="jumma1-iqama">--:--</p>
+                </div>
+                <img src="./imgs/spacer-mini.svg" alt="">
+                <div class="flex">
+                    <p class="p1" id="jumma2-adhan">--:--</p>
+                    <p class="p2" id="jumma2-iqama">--:--</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MOBILE VERSION -->
+        <img class="mobile-spacer" src="./imgs/spacer-hr.svg" alt="">
+        <div class="azaan-panel-mobile">
+            <!-- Prayer times will be updated here dynamically -->
+            <div class="azaan" >
+                <h6>Fajr</h6>
+                <p class="p1" id="fajr-adhan-m">--:--</p>
+                <p class="p2" id="fajr-iqama-m">--:--</p>
+                <h6 style="text-align: right;">الفجر</h6>
+            </div>
+            <div class="azaan">
+                <h6>Sunrise</h6>
+                <p class="p1" style="grid-column: 2/4;" id="sunrise-m">--:--</p>
+                <h6 style="text-align: right;">الشروق</h6>
+            </div>
+            <div class="azaan">
+                <h6>Dhuhr</h6>
+                <p class="p1" id="dhuhr-adhan-m">--:--</p>
+                <p class="p2" id="dhuhr-iqama-m">--:--</p>
+                <h6 style="text-align: right;">الظهر</h6>
+            </div>
+            <div class="azaan">
+                <h6>Asr</h6>
+                <p class="p1" id="asr-adhan-m">--:--</p>
+                <p class="p2" id="asr-iqama-m">--:--</p>
+                <h6 style="text-align: right;">العصر</h6>
+            </div>
+            <div class="azaan">
+                <h6>Maghrib</h6>
+                <p class="p1" id="maghrib-adhan-m">--:--</p>
+                <p class="p2" id="maghrib-iqama-m">--:--</p>
+                <h6 style="text-align: right;">المغرب</h6>
+            </div>
+            <div class="azaan">
+                <h6>Isha</h6>
+                <p class="p1" id="isha-adhan-m">--:--</p>
+                <p class="p2" id="isha-iqama-m">--:--</p>
+                <h6 style="text-align: right;">العشاء</h6>
+            </div>
+        </div>
+        <img class="mobile-spacer" src="./imgs/spacer-hr.svg" alt="">
+        <div class="jumma-mobile mobile">
+            <h6 style="text-align: left;">Jumma <br> Prayers</h6>
+            <div class="flex24">
+                <div class="flex">
+                    <p class="p1" id="jumma1-adhan-m">--:--</p>
+                    <p class="p2" id="jumma1-iqama-m">--:--</p>
+                </div>
+                <div class="flex">
+                    <p class="p1" id="jumma2-adhan-m">--:--</p>
+                    <p class="p2" id="jumma2-iqama-m">--:--</p>
+                </div>
+            </div>
+            <h6 style="text-align: right;">صلاة <br> الجمعة</h6>
+        </div>
+    </section>
+    
+    <!-- <iframe src="https://calendar.google.com/calendar/embed?src=d6fe703a79c497139be5a489f9039296cf7359845592d224ca09d246602ab2a5%40group.calendar.google.com&ctz=America%2FToronto" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>     -->
+    <!-- IMPACT SECTION -->
+    <section class="impact" id="our-community">
+        <img src="./imgs/impact.svg" alt="">
+        <div class="impact-text">
+            <h1>Our Impact</h1>
+            <p>The Islamic Foundation of Toronto strives to play a vital role in building a strong and vibrant Muslim community. Through our services and programs, we hope to foster a sense of unity and support among our members. Our commitment to service reinforces the masjid as a hub for social justice, spiritual development, and collective action.</p>
+        </div>
+        <div class="stats">
+            <!-- FIRST ROW -->
+            <div class="flex-hr">
+                    <div class="stat-tile">
+                        <h3>$10M</h3>
+                        <p>Distributed <br> in Zakat</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>400k+</h3>
+                        <p>Meals <br> distributed</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>380+</h3>
+                        <p>Graduates from <br> the Hifz program</p>
+                    </div>
+            </div>
+            <!-- SECOND ROW -->
+            <div class="flex-hr">
+                    <div class="stat-tile">
+                        <h3>30,000+</h3>
+                        <p>People were <br> served Iftar</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>200+</h3>
+                        <p>Families <br> sponsored</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>200+</h3>
+                        <p>Marriages <br> solemnized</p>
+                    </div>
+            </div>
+            <!-- THIRD ROW -->
+            <div class="flex-hr">
+                    <div class="stat-tile">
+                        <h3>10,000+</h3>
+                        <p>People were <br> served Suhoor</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>100+</h3>
+                        <p>Attendees in <br> Youth Programs</p>
+                    </div>
+                    <div class="stat-tile">
+                        <h3>130+</h3>
+                        <p>Attendees in <br> Senior Programs</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="our-services">
+        <div class="services-text">
+            <h1>Explore our <br> Services</h1>
+            <p>The Islamic Foundation of Toronto strives to play a vital role in building a strong and vibrant Muslim community. Through our services and programs, we hope to foster a sense of unity and support among our members. Our commitment to service reinforces the masjid as a hub for social justice, spiritual development, and collective action.</p>
+        </div>
+        <div class="services-hr">
+            <div class="services-vr">
+                <div class="vr1">
+                    <img src="./imgs/funerals.png" alt="">
+                    <h2>Funerals</h2>
+                </div>
+                <div class="vr2">
+                    <p>Losing a loved one is truly heartbreaking. We are here to help you with everything from bathing to burial services.</p>
+                    <button class="button3">Learn More</button>
+                    <img src="./imgs/services.svg" alt="">
+                </div>
+            </div>
+            <div class="services-vr">
+                <div class="vr1">
+                    <img src="./imgs/rentals.png" alt="">
+                    <h2>Rentals</h2>
+                </div>
+                <div class="vr2">
+                    <p>Whether it’s a wedding, Aqiqa or any other private event, the gymnasium and cafeteria are available to book.</p>
+                    <button class="button3">Learn More</button>
+                    <img src="./imgs/services.svg" alt="">
+                </div>
+            </div>
+            <div class="services-vr">
+                <div class="vr1">
+                    <img src="./imgs/marriages.png" alt="">
+                    <h2>Marriages</h2>
+                </div>
+                <div class="vr2">
+                    <p>We provide imams who are licensed marriage officers to perform your Nikah and take care of all the paperwork on your special day.</p>
+                    <button class="button3">Learn more</button>
+                    <img src="./imgs/services.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHOOLS SECTION -->
+    <section class="schools" id="our-schools">
+        <div class="schools-img">
+            <h1>Working for the <br> generations to come</h1>
+        </div>
+        <div class="schools-text">
+            <p>The Islamic Foundation’s religious schools provide a welcoming environment for students to gain an excellent Islamic education while deepening their connection with the Quran and Sunnah.</p>
+            <div>
+                <div class="bullet">
+                    <img src="./imgs/pagination.svg" alt="">
+                    <h4>Evening Madrassa</h4>
+                </div>
+                <div class="bullet">
+                    <img src="./imgs/pagination.svg" alt="">
+                    <h4>Sunday School</h4>
+                </div>
+                <div class="bullet">
+                    <img src="./imgs/pagination.svg" alt="">
+                    <h4>Evening Hifz</h4>
+                </div>
+                <div class="bullet">
+                    <img src="./imgs/pagination.svg" alt="">
+                    <h4>Full-Time Hifz</h4>
+                </div>
+            </div>
+            <div class="button-row">
+                <button class="button1">Contact Us</button>
+                <button class="button3">Learn More</button>
+            </div>
+        </div>
+        <img src="./imgs/pattern.png" alt="">
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="about" id="about-us">
+        <img class="blueprint" src="./imgs/blueprint.png" alt="">
+        <div class="about-text">
+            <h1>Help us build the future of the <br> Muslim community in Canada</h1>
+            <div class="button-row">
+                <button class="button1">Contact Us</button>
+                <button class="button3">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="link-card">
+            <img draggable="false" onclick="goHome()" src="./imgs/ift-logo.svg" alt="Islamic Foundation of Toronto">
+            <a class="desktop" href="">416 321 0909</a>
+            <a class="desktop" href="mailto:info@islamicfoundation.ca">info@islamicfoundation.ca</a>
+            <a class="desktop" href="https://maps.app.goo.gl/1JMyCrUhpLK7HB2W7">441 Nugget Ave, <br> Scarborough, ON M1S 5E1</a>
+        </div>
+        <img class="mobile" src="./imgs/spacer-hr.svg" alt="">
+        <img class="desktop" src="./imgs/spacer-footer.svg" alt="">
+        <div class="link-cont">
+            <div class="links" id="mobile">
+                <a><h6>Contact Us</h6></a>
+                <a href="#">416 321 0909</a>
+                <a href="mailto:info@islamicfoundation.ca">info@islamicfoundation.ca</a>
+                <a href="https://maps.app.goo.gl/1JMyCrUhpLK7HB2W7">441 Nugget Ave, <br> Scarborough, ON M1S 5E1</a>
+            </div>
+            <div class="links">
+                <a href="./services.html"><h6>Explore Services</h6></a>
+                <a href="./services.html#funerals">Funerals</a>
+                <a href="./services.html#marriages">Marriages</a>
+                <a href="./services.html#rentals">Rentals</a>
+                <a href="./services.html#terms">Terms & Conditions</a>
+            </div>
+            <div class="links">
+                <a href="./community.html"><h6>Explore Community</h6></a>
+                <a href="./community.html#dawa">Dawa</a>
+                <a href="./community.html#youth">Youth</a>
+                <a href="./community.html#seniors">Seniors</a>
+                <a href="./community.html#ramadan">Ramadan</a>
+                <a href="./community.html#qiraat-competition">Qirat Competition</a>
+                <a href="./community.html#tax-clinic">Tax Clinic</a>
+                <a href="./community.html#feeding-faithfully">Feeding Faithfully</a>
+            </div>
+            <div class="links">
+                <a href="./schools.html"><h6>Explore Schools</h6></a>
+                <a href="./schools.html#full-time-hifz">Full-Time Hifz</a>
+                <a href="./schools.html#evening-hifz">Evening Hifz</a>
+                <a href="./schools.html#evening-madrassa">Evening Madrassa</a>
+                <a href="./schools.html#sunday-school">Sunday School</a>
+            </div>
+            <div class="links">
+                <a href="./about.html"><h6>About Us</h6></a>
+                <a href="./about.html#imams">Imams</a>
+                <a href="./about.html#directors">Directors</a>
+                <a href="./about.html#trustees">Trustees</a>
+                <a href="./about.html#history">History</a>
+                <a href="./archives.html">Archives</a>
+            </div>
+            <div class="links">
+                <h6>Connect</h6>
+                <a href="https://maps.app.goo.gl/BTQQpzN58Hp9Yfbv7">Google Maps</a>
+                <a href="https://www.instagram.com/islamicfoundationoftoronto/">Instagram</a>
+                <a href="https://www.facebook.com/iftlive/">FaceBook</a>
+                <a href="https://www.youtube.com/user/islamicfoundationca">YouTube</a>
+                <a href="https://x.com/iftlive">X / Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="./utils/javascript.js"></script>
+</body>
+</html>
