@@ -190,35 +190,25 @@
     <div id="overlay"></div>
 
     <!-- SLIDER -->
-    <section class="container" id="scrollContainer">
-        <div class="slides" id="slide1">
-            <div class="slider-text" style="padding: 0; align-items: center; justify-content: flex-start;">
-                <h1>السلام عليكم ورحمه الله وبركاته
-                <br>Peace and blessings be upon you</h1>
-                <p>Welcome to the Islamic Foundation of Toronto.
-                <br>Proudly serving the ummah since 1969.</p>
-            </div>
-        </div>
-        <div class="slides" id="slide2">
-            <div class="slider-text">
-                <h1>Join us during Ramadan</h1>
-                <p>Daily iftar meals after Maghrib. Nightly tafsir sessions after taraweeh with Mufti Yusuf Badat. Friday Night Reflections series after taraweeh. Itikaaf and Qiyaam-ul layl in the last 10 nights</p>
-                <a href="">Register</a>
-            </div>
-            <img src="./imgs/45.jpg" alt="">
-        </div>
-        <div class="slides" id="slide3">
-            <div class="slider-text">
-                <h1>Donate to our relief efforts.</h1>
-                <p>
-                    Since the onset of the humanitarian crisis in Gaza, the Islamic Foundation has been instrumental in sending aid to hundreds of thousands of people.
-                </p>
-                <a href="https://app.irm.io/islamicfoundation.ca">Donate Now</a>
-            </div>
-            <img src="./imgs/45.jpg" alt="">
-        </div>
-        <img class="containerimg" src="./imgs/slide1.png" alt="">
-    </section>
+  <section class="container" id="scrollContainer">
+  <!-- Static Welcome Slide -->
+  <div class="slides" id="slide1">
+    <div class="slider-text" style="padding: 0; align-items: center; justify-content: flex-start;">
+      <h1>السلام عليكم ورحمه الله وبركاته<br>Peace and blessings be upon you</h1>
+      <p>Welcome to the Islamic Foundation of Toronto.<br>Proudly serving the ummah since 1969.</p>
+    </div>
+  </div>
+
+  <!-- Admin-controlled dynamic slides -->
+  <div class="slides" id="slide2"></div>
+  <div class="slides" id="slide3"></div>
+  <div class="slides" id="slide4"></div>
+  <div class="slides" id="slide5"></div>
+
+  <!-- Optional static background image -->
+  <img class="containerimg" src="./imgs/slide1.png" alt="">
+</section>
+
 
     <!-- SLIDER CONTROLS -->
     <div class="controls">
@@ -623,5 +613,59 @@
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="./utils/javascript.js"></script>
+
+    <script>
+  async function fetchAndRenderSlides() {
+    try {
+      const res = await fetch('http://localhost:3000/slider');
+      const result = await res.json();
+      const slides = result.data;
+
+      // Only inject into slide2, slide3, slide4, slide5
+      slides.forEach((slide, index) => {
+        const htmlSlideIndex = index + 2; // because slide1 is static
+        const container = document.getElementById(`slide${htmlSlideIndex}`);
+        if (!container) return;
+
+        container.innerHTML = ''; // Clear existing
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'slider-text';
+
+        const h1 = document.createElement('h1');
+        h1.innerHTML = slide.title;
+        textDiv.appendChild(h1);
+
+        const p = document.createElement('p');
+        p.innerHTML = slide.paragraph;
+        textDiv.appendChild(p);
+
+        container.appendChild(textDiv);
+
+        // Image
+        if (slide.imageUrl) {
+          const img = document.createElement('img');
+          img.src = slide.imageUrl;
+          img.alt = 'Slide image';
+          container.appendChild(img);
+        }
+
+        // Button
+        if (slide.buttonEnabled === true || slide.buttonEnabled === 'true') {
+          const a = document.createElement('a');
+          a.href = slide.buttonLink || '#';
+          a.innerText = slide.buttonLabel || 'Learn more';
+          a.className = 'slide-button';
+          container.appendChild(a);
+        }
+      });
+    } catch (err) {
+      console.error('[ERROR] Failed to fetch or render slides:', err);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', fetchAndRenderSlides);
+</script>
+
 </body>
 </html>
