@@ -27,7 +27,7 @@ export default function SliderForm({ slider, onUpdate }: Props) {
     formData.append('image', imageFile as File); // field name should be 'image'
 
     try {
-      const res = await axios.post('http://localhost:3000/images', formData, {
+      const res = await axios.post('https://ifta-api.onrender.com/images', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -72,7 +72,7 @@ export default function SliderForm({ slider, onUpdate }: Props) {
 
     try {
       console.log('[PUT] Sending update to slide', form.index);
-      const res = await axios.put(`http://localhost:3000/slider/${form.index}`, payload, {
+      const res = await axios.put(`https://ifta-api.onrender.com/slider/${form.index}`, payload, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
