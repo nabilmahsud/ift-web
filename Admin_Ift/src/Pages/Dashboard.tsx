@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [sliders, setSliders] = useState<Slider[]>([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/slider').then(res => setSliders(res.data.data));
+    axios.get('https://ifta-api.onrender.com/slider').then(res => setSliders(res.data.data));
   }, []);
 
   const handleUpdate = (updated: Slider) => {
