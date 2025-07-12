@@ -617,7 +617,7 @@
     <script>
   async function fetchAndRenderSlides() {
     try {
-      const res = await fetch('http://localhost:3000/slider');
+      const res = await fetch('https://ifta-api.onrender.com/slider');
       const result = await res.json();
       const slides = result.data;
 
